@@ -1,12 +1,17 @@
 package com.cadenza.bottomnavigation.Tanya;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import com.cadenza.bottomnavigation.Panduan.panduanActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.core.view.WindowCompat;
 import androidx.navigation.NavController;
@@ -20,36 +25,32 @@ import com.cadenza.bottomnavigation.R;
 
 public class Tanya5Activity extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityTanya5Binding binding;
+    private ImageView btnkembali;
+    private Button btnChat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tanya5);
 
-        binding = ActivityTanya5Binding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        btnkembali = findViewById(R.id.btnKembali);
+        btnChat = findViewById(R.id.btnChat);
 
-        setSupportActionBar(binding.toolbar);
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_tanya5);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        btnkembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(getApplicationContext(), PertanyaanActivity.class));
             }
         });
-    }
+        btnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String wpurl="https://wa.me/+6285732214214?text=Assalamualaikum";
+                Intent intent=new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(wpurl));
+                startActivity(intent);
+            }
+        });
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_tanya5);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
     }
 }

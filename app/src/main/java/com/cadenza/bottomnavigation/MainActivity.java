@@ -47,14 +47,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_shop:
                         fragment = new ShopFragment();
                         break;
-                    case R.id.nav_like:
-                        Class fragmentClass = JadwalSholat.class;
-                        try {
-                            fragment = (Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        break;
                     case R.id.profile:
                         fragment = new ProfileFragment();
                         break;

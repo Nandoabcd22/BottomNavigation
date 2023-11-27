@@ -1,5 +1,6 @@
 package com.cadenza.bottomnavigation.Tanya;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -7,6 +8,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.core.view.WindowCompat;
 import androidx.navigation.NavController;
@@ -20,36 +22,21 @@ import com.cadenza.bottomnavigation.R;
 
 public class Tanya9Activity extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityTanya9Binding binding;
+    private ImageView btnkembali;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tanya9);
 
-        binding = ActivityTanya9Binding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        btnkembali = findViewById(R.id.btnKembali);
 
-        setSupportActionBar(binding.toolbar);
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_tanya9);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        btnkembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(getApplicationContext(), PertanyaanActivity.class));
             }
         });
-    }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_tanya9);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
     }
 }

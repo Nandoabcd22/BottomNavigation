@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.cadenza.bottomnavigation.Panduan.panduanActivity;
+import com.cadenza.bottomnavigation.Tanya.PertanyaanActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +21,7 @@ import com.cadenza.bottomnavigation.Panduan.panduanActivity;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-    private ImageView btnPanduan, btnAlquran;
+    private ImageView btnPanduan, btnAlquran, btnTanya;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -58,12 +59,21 @@ public class HomeFragment extends Fragment {
 
         btnPanduan = view.findViewById(R.id.btnPanduan);
         btnAlquran = view.findViewById(R.id.btnAlquran);
+        btnTanya = view.findViewById(R.id.btnTanya);
 
         if (btnPanduan != null) {
             btnPanduan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(getActivity(), panduanActivity.class));
+                }
+            });
+        }
+        if (btnTanya != null) {
+            btnTanya.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), PertanyaanActivity.class));
                 }
             });
         }

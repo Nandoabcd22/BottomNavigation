@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cadenza.bottomnavigation.HomeFragment;
+import com.cadenza.bottomnavigation.MainActivity;
 import com.cadenza.bottomnavigation.R;
 
 public class panduanActivity extends AppCompatActivity {
@@ -124,12 +125,10 @@ public class panduanActivity extends AppCompatActivity {
         btnKmbl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Kembali ke HomeFragment
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.homeFragmentContainer, new HomeFragment())
-                        .commit();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
+
 
 
     }

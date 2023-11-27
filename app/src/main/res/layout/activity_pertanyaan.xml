@@ -121,7 +121,7 @@
                     android:textColor="@color/black"
                     app:cornerRadius="10dp" />
                 <Button
-                    android:id="@+id/btnSai"
+                    android:id="@+id/btnProsedur"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
@@ -153,17 +153,7 @@
                     android:textSize="12sp"
                     android:textColor="@color/black"
                     app:cornerRadius="10dp" />
-                <Button
-                    android:id="@+id/btnHkmUmroh"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Hukum dan Pelaksanaan Ibadah Umroh"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    app:cornerRadius="10dp" />
+
                 <Button
                     android:id="@+id/btnLayanan"
                     android:layout_width="match_parent"
@@ -192,7 +182,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="@color/white"
-                    android:text="Apakah ada fasilitas khusus yang disediakan untuk jamaah?"
+                    android:text="Apa yang termasuk dalam biaya tersebut?"
                     android:fontFamily="@font/poppins_medium"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -202,7 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_marginTop="10dp"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/hijau"
                     android:text="Klik jika Anda masih belum menemukan jawaban yang diinginkan."
                     android:fontFamily="@font/poppins_medium"
                     android:textSize="12sp"

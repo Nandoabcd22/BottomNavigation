@@ -10,9 +10,6 @@
         android:title="Search"
         android:icon="@drawable/ic_search"/>
 
-    <item android:id="@+id/nav_like"
-        android:title="Like"
-        android:icon="@drawable/ic_like"/>
 
     <item android:id="@+id/nav_shop"
         android:title="Shop"

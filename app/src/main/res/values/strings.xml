@@ -165,6 +165,17 @@
     <string name="title_activity_doa_memasuki">DoaMemasukiActivity</string>
     <string name="title_activity_doa_masuk_masjidil">DoaMasukMasjidilActivity</string>
     <string name="title_activity_pertanyaan">PertanyaanActivity</string>
+    <string name="title_activity_tanya1">Tanya1Activity</string>
+    <string name="title_activity_tanya2">Tanya2Activity</string>
+    <string name="title_activity_tanya3">Tanya3Activity</string>
+    <string name="title_activity_tanya4">Tanya4Activity</string>
+    <string name="title_activity_tanya5">Tanya5Activity</string>
+    <string name="title_activity_tanya6">Tanya6Activity</string>
+    <string name="title_activity_tanya7">Tanya7Activity</string>
+    <string name="title_activity_tanya8">Tanya8Activity</string>
+    <string name="title_activity_tanya9">Tanya9Activity</string>
+    <string name="title_activity_tanya10">Tanya10Activity</string>
+    <string name="title_activity_tanya11">Tanya11Activity</string>
 
 
 </resources>
