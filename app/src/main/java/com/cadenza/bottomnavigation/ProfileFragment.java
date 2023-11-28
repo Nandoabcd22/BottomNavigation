@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.cadenza.bottomnavigation.Tanya.PertanyaanActivity;
+
 public class ProfileFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -24,7 +26,7 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private TextView txtNik, txtNama, txtLogout;
+    private TextView txtNik, txtNama, txtLogout, etEdit;
 
     private ImageView btnLogout;
     private SharedPreferences sharedPreferences;
@@ -68,7 +70,7 @@ public class ProfileFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // inisialisasi berdasarkan ID
-        TextView btnEdit = rootView.findViewById(R.id.btnEdit);
+        etEdit = rootView.findViewById(R.id.etEdit);
         txtNama = rootView.findViewById(R.id.txtNama);
         txtNik = rootView.findViewById(R.id.txtNik);
         btnLogout = rootView.findViewById(R.id.btnLogout);
@@ -96,6 +98,14 @@ public class ProfileFragment extends Fragment {
                 requireActivity().finish();
             }
         });
+        if (etEdit != null) {
+            etEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), EditAkunActivity.class));
+                }
+            });
+        }
 
         // Ambil data dari SharedPreferences
         String nama_lengkap = sharedPreferences.getString("nama_lengkap", ""); // Ganti "nama" sesuai dengan nama yang digunakan saat menyimpan data

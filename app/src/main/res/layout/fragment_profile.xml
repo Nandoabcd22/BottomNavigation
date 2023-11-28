@@ -69,12 +69,13 @@
             android:fontFamily="@font/poppins_bold"
             android:textSize="20sp"/>
         <ImageView
-            android:layout_width="110dp"
+            android:id="@+id/profileimage"
+            android:layout_width="300dp"
             android:layout_height="110dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="150dp"
             android:layout_marginRight="150dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="130dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_coners"
             android:src="@drawable/baseline_person_pin_24"/>
@@ -87,7 +88,7 @@
             android:background="@drawable/baseline_edit_note_24" />
 
         <TextView
-            android:id="@+id/btnEdit"
+            android:id="@+id/etEdit"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="80dp"
             android:layout_width="match_parent"

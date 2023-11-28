@@ -334,7 +334,7 @@
                 <ImageView
                     android:layout_width="170dp"
                     android:layout_height="130dp"
-                    android:background="@drawable/masjid"/>
+                    android:background="@drawable/umrohh"/>
                 <TextView
                     android:layout_marginLeft="173dp"
                     android:layout_width="match_parent"
@@ -388,7 +388,7 @@
                     android:layout_width="170dp"
                     android:layout_height="130dp"
                     android:layout_marginLeft="180dp"
-                    android:background="@drawable/masjid"/>
+                    android:background="@drawable/hajii"/>
                 <TextView
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="180dp"
