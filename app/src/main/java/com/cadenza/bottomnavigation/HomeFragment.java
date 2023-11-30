@@ -21,7 +21,7 @@ import com.cadenza.bottomnavigation.Tanya.PertanyaanActivity;
 
 public class HomeFragment extends Fragment {
     private ImageView btnPanduan, btnAlquran, btnTanya;
-    private TextView btnSlkpnya, btnSelengkapnya;
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -60,8 +60,7 @@ public class HomeFragment extends Fragment {
         btnPanduan = view.findViewById(R.id.btnPanduan);
         btnAlquran = view.findViewById(R.id.btnAlquran);
         btnTanya = view.findViewById(R.id.btnTanya);
-        btnSlkpnya = view.findViewById(R.id.btnSlkpnya);
-        btnSelengkapnya = view.findViewById(R.id.btnSelengkapnya);
+
 
         if (btnPanduan != null) {
             btnPanduan.setOnClickListener(new View.OnClickListener() {
@@ -77,32 +76,6 @@ public class HomeFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(getActivity(), PertanyaanActivity.class));
-                }
-            });
-        }
-
-        if (btnSlkpnya != null) {
-            btnSlkpnya.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Mengasumsikan ShopFragment adalah Fragment, bukan Activity
-                    ShopFragment shopFragment = new ShopFragment();
-
-                    // Menggunakan FragmentTransaction untuk menggantikan fragment saat ini
-                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.homeFragmentContainer, shopFragment);
-                    transaction.addToBackStack(null); // Opsional, untuk menambahkan transaksi ke tumpukan kembali
-                    transaction.commit();
-                }
-            });
-        }
-
-        if (btnSelengkapnya != null) {
-            btnSelengkapnya.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Memulai aktivitas yang terkait dengan ShopFragment
-                    startActivity(new Intent(getActivity(), ShopFragment.class));
                 }
             });
         }
