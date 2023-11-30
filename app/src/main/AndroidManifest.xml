@@ -18,6 +18,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".TestimoniActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GaleryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_galery"
+            android:theme="@style/Theme.BottomNavigation" />
+        <activity
             android:name=".EditAkunActivity"
             android:exported="false"
             android:label="@string/title_activity_edit_akun"

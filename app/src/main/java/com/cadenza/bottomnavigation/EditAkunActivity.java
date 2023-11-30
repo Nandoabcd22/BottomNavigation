@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.cadenza.bottomnavigation.API.Db_Contract;
+import com.cadenza.bottomnavigation.Panduan.panduanActivity;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -41,6 +42,7 @@ public class EditAkunActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    private ImageView btnkembali;
     Button editImage, btnsmpan;
     TextView etnmalengkap, etNk, etNohp;
     ImageView etProfile;
@@ -91,6 +93,16 @@ public class EditAkunActivity extends AppCompatActivity {
                         }).check();
             }
         });
+        btnkembali = findViewById(R.id.btnKembali);
+
+        if (btnkembali != null) {
+            btnkembali.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getApplicationContext(), ProfileFragment.class));
+                }
+            });
+        }
 
         btnsmpan.setOnClickListener(new View.OnClickListener() {
             @Override

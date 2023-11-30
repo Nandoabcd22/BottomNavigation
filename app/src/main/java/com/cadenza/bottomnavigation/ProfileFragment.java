@@ -3,6 +3,7 @@ package com.cadenza.bottomnavigation;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,11 +27,10 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private TextView txtNik, txtNama, txtLogout, etEdit;
+    private TextView txtNik, txtNama, txtLogout, etEdit, btnHubungi;
 
     private ImageView btnLogout;
     private SharedPreferences sharedPreferences;
-
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -75,9 +75,19 @@ public class ProfileFragment extends Fragment {
         txtNik = rootView.findViewById(R.id.txtNik);
         btnLogout = rootView.findViewById(R.id.btnLogout);
         txtLogout = rootView.findViewById(R.id.txtLogout);
+        btnHubungi = rootView.findViewById(R.id.btnHubungi);
         sharedPreferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE); // Inisialisasi sharedPreferences
 //        Toast.makeText(requireActivity(), sharedPreferences.getString("NIK", ""), Toast.LENGTH_SHORT).show();
 
+        btnHubungi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String wpurl = "https://wa.me/+6289686404940?text=Assalamualaikum ADMIN";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(wpurl));
+                startActivity(intent);
+            }
+        });
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,12 +121,9 @@ public class ProfileFragment extends Fragment {
         String nama_lengkap = sharedPreferences.getString("nama_lengkap", ""); // Ganti "nama" sesuai dengan nama yang digunakan saat menyimpan data
         String NIK = sharedPreferences.getString("NIK", ""); // Ganti "no_telp" sesuai dengan nama yang digunakan saat menyimpan data
 
-
         // Set teks pada TextView dengan data dari SharedPreferences
         txtNama.setText(nama_lengkap);
         txtNik.setText(NIK);
         return rootView;
     }
-
-
 }

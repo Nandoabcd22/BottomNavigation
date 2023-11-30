@@ -1,5 +1,6 @@
 package com.cadenza.bottomnavigation;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import android.content.SharedPreferences;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -20,7 +21,9 @@ import com.cadenza.bottomnavigation.Panduan.panduanActivity;
 import com.cadenza.bottomnavigation.Tanya.PertanyaanActivity;
 
 public class HomeFragment extends Fragment {
-    private ImageView btnPanduan, btnAlquran, btnTanya;
+    private ImageView btnPanduan, btnAlquran, btnTanya, btnGalery,btnTestimoni;
+    private TextView txtNama;
+    private SharedPreferences sharedPreferences;
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -60,6 +63,11 @@ public class HomeFragment extends Fragment {
         btnPanduan = view.findViewById(R.id.btnPanduan);
         btnAlquran = view.findViewById(R.id.btnAlquran);
         btnTanya = view.findViewById(R.id.btnTanya);
+        btnGalery = view.findViewById(R.id.btnGalery);
+        btnTestimoni = view.findViewById(R.id.btnTestimoni);
+        txtNama = view.findViewById(R.id.txtNama);
+        sharedPreferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE); // Inisialisasi sharedPreferences
+//        Toast.makeText(requireActivity(), sharedPreferences.getString("NIK", ""), Toast.LENGTH_SHORT).show();
 
 
         if (btnPanduan != null) {
@@ -79,6 +87,14 @@ public class HomeFragment extends Fragment {
                 }
             });
         }
+        if (btnGalery != null) {
+            btnGalery.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), GaleryActivity.class));
+                }
+            });
+        }
 
         if (btnAlquran != null) {
             btnAlquran.setOnClickListener(new View.OnClickListener() {
@@ -89,13 +105,25 @@ public class HomeFragment extends Fragment {
             });
         }
 
-        // Kode yang sudah ada...
+        if (btnTestimoni != null) {
+            btnTestimoni.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), TestimoniActivity.class));
+                }
+            });
+        }
 
+        String nama_lengkap = sharedPreferences.getString("nama_lengkap", "");
+
+        txtNama.setText(nama_lengkap);
         return view;
+
     }
 
     private void gotoUrl(String s) {
         Uri uri = Uri.parse(s);
         startActivity(new Intent(Intent.ACTION_VIEW, uri));
+
     }
 }

@@ -46,15 +46,6 @@
             android:background="@drawable/pinkmotif"
             />
 
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="110dp"
-            android:layout_marginLeft="330dp"
-            android:src="@drawable/baseline_circle_notifications_24"
-            android:layout_gravity="center"
-            />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,6 +53,17 @@
             android:layout_marginTop="110dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Assalamualaikum"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="140dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Fajar dwi"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -180,6 +182,7 @@
                     app:cardCornerRadius="8dp">
 
                     <ImageView
+                        android:id="@+id/btnGalery"
                         android:layout_width="58dp"
                         android:layout_height="58dp"
                         android:src="@drawable/baseline_photo_24"
@@ -247,7 +250,6 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/btnTestimoni"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="0dp"
@@ -258,6 +260,7 @@
                     app:cardCornerRadius="8dp">
 
                     <ImageView
+                        android:id="@+id/btnTestimoni"
                         android:layout_width="58dp"
                         android:layout_height="62dp"
                         android:layout_gravity="center"
@@ -269,7 +272,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="0dp"
-                    android:text="Testimoni"
+                    android:text="Testi"
                     android:textAlignment="center"
                     android:textSize="12dp"
                     android:textStyle="bold"
@@ -425,20 +428,20 @@
                         android:orientation="vertical">
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="110dp"
+                            android:layout_width="112dp"
                             android:layout_height="110dp"
                             android:backgroundTint="#c9c9c9"
                             app:cardCornerRadius="12dp">
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/masjid"/>
+                                android:layout_width="112dp"
+                                android:layout_height="119dp"
+                                android:background="@drawable/ftjember"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
-                                android:text="Tan'Lim"
+                                android:text="Jember"
                                 android:layout_marginTop="40dp"
                                 android:paddingStart="25dp"
                                 android:textSize="16sp"
@@ -466,15 +469,15 @@
 
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/muzdalifah"/>
+                                android:layout_width="111dp"
+                                android:layout_height="119dp"
+                                android:background="@drawable/ftsurakarta"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
-                                android:text="Muzdaliffah"
+                                android:text="Surakarta"
                                 android:layout_marginTop="40dp"
                                 android:paddingStart="8dp"
                                 android:textSize="16sp"
@@ -498,16 +501,16 @@
                             app:cardCornerRadius="12dp">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/kabah"/>
+                                android:layout_width="111dp"
+                                android:layout_height="119dp"
+                                android:background="@drawable/ftmedan"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
-                                android:text="Qiblatain"
+                                android:text="Medan"
                                 android:layout_marginTop="40dp"
-                                android:paddingStart="20dp"
+                                android:paddingStart="30dp"
                                 android:textSize="16sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textStyle="bold"/>
@@ -528,16 +531,15 @@
                             app:cardCornerRadius="12dp">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/nabawi"/>
+                                android:layout_width="111dp"                               android:layout_height="119dp"
+                                android:background="@drawable/ftindramayu"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
-                                android:text="Nabawi"
+                                android:text="Indramayu"
                                 android:layout_marginTop="40dp"
-                                android:paddingStart="25dp"
+                                android:paddingStart="10dp"
                                 android:textSize="16sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textStyle="bold"/>
