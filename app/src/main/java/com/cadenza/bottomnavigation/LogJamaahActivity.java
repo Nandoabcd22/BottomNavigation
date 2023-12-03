@@ -39,17 +39,21 @@ public class LogJamaahActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_jamaah);
 
+        // Inisialisasi elemen UI
         etNik = findViewById(R.id.etNik);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
         btnLupaNik = findViewById(R.id.btnLupaNik);
 
+        // Menambahkan onClickListener untuk tombol register
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), RegJamaahActivity.class));
             }
         });
+
+        // Menambahkan onClickListener untuk tombol lupa NIK
         btnLupaNik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +61,7 @@ public class LogJamaahActivity extends AppCompatActivity {
             }
         });
 
+        // Menambahkan onClickListener untuk tombol login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,31 +69,40 @@ public class LogJamaahActivity extends AppCompatActivity {
             }
         });
 
+        // Inisialisasi SharedPreferences
         sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+
+        // Mengecek status login
         checkLoginStatus();
     }
 
+    // Metode untuk melakukan proses login pengguna
     private void loginUser() {
+        // Mendapatkan NIK dari EditText
         String NIK = etNik.getText().toString();
 
+        // Memastikan NIK tidak kosong
         if (!NIK.isEmpty()) {
 
+            // Inisialisasi antrean permintaan Volley
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-            // Ganti urlLogin dengan URL Anda
+            // Membuat permintaan StringRequest menggunakan metode POST
             StringRequest stringRequest = new StringRequest(Request.Method.POST, Db_Contract.urlLogjamaah + "?NIK=" + NIK,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
+                                // Memproses respons JSON dari server
                                 JSONObject jsonResponse = new JSONObject(response);
 
+                                // Mendapatkan kode dan status dari respons
                                 int code = jsonResponse.getInt("code");
                                 String status = jsonResponse.getString("status");
 
+                                // Jika kode adalah 200 (berhasil)
                                 if (code == 200) {
-
-                                    // Simpan data ke SharedPreferences
+                                    // Mendapatkan data pengguna dari respons
                                     JSONObject userObject = jsonResponse.getJSONObject("data_jamaah");
                                     String NIK = userObject.getString("NIK");
                                     String nama_lengkap = userObject.getString("nama_lengkap");
@@ -99,8 +113,7 @@ public class LogJamaahActivity extends AppCompatActivity {
                                     String id_agen = userObject.getString("id_agen");
                                     String nama_bapak = userObject.getString("nama_bapak");
 
-                                    sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
-                                    // Simpan data ke SharedPreferences
+                                    // Menyimpan data ke SharedPreferences
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
                                     editor.putString("NIK", NIK);
                                     editor.putString("nama_lengkap", nama_lengkap);
@@ -113,10 +126,14 @@ public class LogJamaahActivity extends AppCompatActivity {
                                     editor.putBoolean("isLoggedIn", true);
                                     editor.apply();
 
+                                    // Mengatur ulang input NIK
                                     etNik.setText("");
+
+                                    // Berpindah ke halaman utama setelah login berhasil
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_SHORT).show();
                                 } else {
+                                    // Menampilkan pesan status jika login gagal
                                     Toast.makeText(getApplicationContext(), status, Toast.LENGTH_SHORT).show();
                                 }
                             } catch (JSONException e) {
@@ -126,26 +143,34 @@ public class LogJamaahActivity extends AppCompatActivity {
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
+                    // Menampilkan pesan jika terjadi kesalahan dalam permintaan
                     Toast.makeText(getApplicationContext(), "Login Gagal: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            }){
+            }) {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
+                    // Mengatur parameter POST dengan NIK
                     Map<String, String> params = new HashMap<String, String>();
                     params.put("NIK", NIK);
                     return params;
                 }
             };
+
+            // Menambahkan permintaan ke antrean
             requestQueue.add(stringRequest);
         } else {
+            // Menampilkan pesan jika NIK kosong
             Toast.makeText(getApplicationContext(), "NIK tidak boleh kosong", Toast.LENGTH_SHORT).show();
         }
     }
 
+    // Metode untuk memeriksa status login
     private void checkLoginStatus() {
+        // Mendapatkan status login dari SharedPreferences
         boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+        // Jika pengguna sudah login sebelumnya, arahkan ke halaman utama
         if (isLoggedIn) {
-            // Pengguna sudah login sebelumnya, arahkan ke halaman beranda
             Intent intent = new Intent(LogJamaahActivity.this, MainActivity.class);
             startActivity(intent);
             finish();

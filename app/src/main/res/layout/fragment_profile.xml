@@ -68,41 +68,23 @@
             android:layout_marginTop="320dp"
             android:fontFamily="@font/poppins_bold"
             android:textSize="20sp"/>
+
         <ImageView
             android:id="@+id/profileimage"
-            android:layout_width="400dp"
-            android:layout_height="100dp"
+            android:layout_width="140dp"
+            android:layout_height="127dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="150dp"
-            android:layout_marginRight="150dp"
             android:layout_marginTop="160dp"
+            android:layout_marginRight="150dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_coners"
-            android:src="@drawable/baseline_person_pin_24"/>
+            android:src="@drawable/baseline_person_pin_24" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="400dp"
-            android:layout_marginLeft="60dp"
-            android:background="@drawable/baseline_edit_note_24" />
-
-        <TextView
-            android:id="@+id/etEdit"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="80dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Edit Profil"
-            android:layout_marginTop="400dp"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="20sp"/>
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="410dp"
             android:layout_marginLeft="60dp"
             android:background="@drawable/baseline_call_end_24" />
 
@@ -114,7 +96,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="Hubungi Kami"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="410dp"
             android:fontFamily="@font/poppins_bold"
             android:textSize="20sp"/>
 
@@ -122,7 +104,7 @@
             android:id="@+id/btnLogout"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="470dp"
             android:layout_marginLeft="60dp"
             android:background="@drawable/baseline_login_16" />
 
@@ -134,7 +116,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/merah"
             android:text="Logout"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="470dp"
             android:fontFamily="@font/poppins_bold"
             android:textSize="20sp"/>
 

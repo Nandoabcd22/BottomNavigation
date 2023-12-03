@@ -43,7 +43,7 @@ public class EditAkunActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private ImageView btnkembali;
-    Button editImage, btnsmpan;
+    Button btnsmpan;
     TextView etnmalengkap, etNk, etNohp;
     ImageView etProfile;
     Uri imageUri;
@@ -61,14 +61,14 @@ public class EditAkunActivity extends AppCompatActivity {
         etNohp = findViewById(R.id.etNohp);
         etNk = findViewById(R.id.etNk);
         etnmalengkap = findViewById(R.id.etnmalengkap);
-        editImage = findViewById(R.id.editImage);
+        etProfile = findViewById(R.id.etProfile);
         btnsmpan = findViewById(R.id.btnsmpan);
         etProfile = findViewById(R.id.etProfile);
 
         // Initialize RequestQueue
         queue = Volley.newRequestQueue(this);
 
-        editImage.setOnClickListener(new View.OnClickListener() {
+        etProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Dexter.withActivity(EditAkunActivity.this)

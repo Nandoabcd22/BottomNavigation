@@ -32,6 +32,7 @@ import java.util.Map;
 
 public class RegJamaahActivity extends AppCompatActivity {
 
+    // Mendeklarasikan elemen UI
     private EditText etNamalengkap, etNik, etNo_hp, etTgllahir, etAlamat, etNmaBapak;
     private Spinner etGender, etIdAgen;
     private Button btnRegJamaah;
@@ -41,6 +42,7 @@ public class RegJamaahActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_jamaah);
 
+        // Inisialisasi elemen UI
         etNamalengkap = findViewById(R.id.etNamalengkap);
         etNik = findViewById(R.id.etNik);
         etNo_hp = findViewById(R.id.etNo_hp);
@@ -51,18 +53,19 @@ public class RegJamaahActivity extends AppCompatActivity {
         etNmaBapak = findViewById(R.id.etNmaBapak);
         btnRegJamaah = findViewById(R.id.btnRegJamaah);
 
-        // Inisialisasi Spinner Gender
+        // Inisialisasi Spinner untuk pilihan jenis kelamin
         ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(this,
                 R.array.gender_options, android.R.layout.simple_spinner_item);
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         etGender.setAdapter(genderAdapter);
 
+        // Inisialisasi Spinner untuk pilihan ID Agen
         ArrayAdapter<CharSequence> IdAgenAdapter = ArrayAdapter.createFromResource(this,
                 R.array.IdAgen_options, android.R.layout.simple_spinner_item);
         IdAgenAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         etIdAgen.setAdapter(IdAgenAdapter);
 
-        // Tambahkan listener untuk menampilkan DatePickerDialog saat etTgllahir diklik
+        // Menambahkan listener untuk menampilkan DatePickerDialog saat etTgllahir diklik
         etTgllahir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,9 +73,11 @@ public class RegJamaahActivity extends AppCompatActivity {
             }
         });
 
+        // Menambahkan listener untuk tombol registrasi
         btnRegJamaah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Mendapatkan nilai dari input pengguna
                 String nama_lengkap = etNamalengkap.getText().toString();
                 String NIK = etNik.getText().toString();
                 String no_hp = etNo_hp.getText().toString();
@@ -82,6 +87,7 @@ public class RegJamaahActivity extends AppCompatActivity {
                 String alamat = etAlamat.getText().toString();
                 String nama_bapak = etNmaBapak.getText().toString();
 
+                // Validasi input pengguna
                 boolean isValid = true;
 
                 if (TextUtils.isEmpty(nama_lengkap)) {
@@ -124,8 +130,7 @@ public class RegJamaahActivity extends AppCompatActivity {
         });
     }
 
-
-    // Method untuk menampilkan DatePickerDialog
+    // Metode untuk menampilkan DatePickerDialog
     private void showDatePickerDialog() {
         // Ambil tanggal sekarang sebagai default
         int year, month, day;
@@ -155,7 +160,9 @@ public class RegJamaahActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    // Metode untuk melakukan registrasi pengguna
     private void registerUser(String nama_lengkap, String NIK, String no_hp, String tgl_lahir, String jenis_kelamin, String id_agen, String alamat, String nama_bapak) {
+        // Buat permintaan StringRequest menggunakan Volley
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Db_Contract.urlRegjamaah,
                 new Response.Listener<String>() {
                     @Override
@@ -171,19 +178,24 @@ public class RegJamaahActivity extends AppCompatActivity {
                 }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
+                // Mengembalikan parameter permintaan POST
                 return createRequestParams(nama_lengkap, NIK, no_hp, tgl_lahir, jenis_kelamin, id_agen, alamat, nama_bapak);
             }
         };
 
+        // Menambahkan permintaan ke antrean
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
     }
 
+    // Metode untuk menangani respons dari permintaan registrasi
     private void handleResponse(String response) {
         try {
+            // Memproses respons JSON
             JSONObject jsonResponse = new JSONObject(response);
             int kode = jsonResponse.getInt("kode");
 
+            // Menampilkan pesan berdasarkan kode respons
             if (kode == 201) {
                 Toast.makeText(getApplicationContext(), "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
             } else if (kode == 406) {
@@ -196,10 +208,12 @@ public class RegJamaahActivity extends AppCompatActivity {
         }
     }
 
+    // Metode untuk menangani kesalahan dari permintaan registrasi
     private void handleError(VolleyError error) {
         Toast.makeText(getApplicationContext(), "Error: " + error.toString(), Toast.LENGTH_SHORT).show();
     }
 
+    // Metode untuk membuat parameter permintaan POST
     private Map<String, String> createRequestParams(String nama_lengkap, String NIK, String no_hp, String tgl_lahir, String jenis_kelamin, String id_agen, String alamat, String nama_bapak) {
         Map<String, String> requestParams = new HashMap<>();
         requestParams.put("nama_lengkap", nama_lengkap);

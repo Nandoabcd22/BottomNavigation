@@ -22,9 +22,6 @@
                 android:textSize="20sp"
                 android:gravity="start"/>
     </androidx.appcompat.widget.Toolbar>
-
-
-
     <ScrollView
         android:id="@+id/container_fragment"
         android:contentDescription="scrollview_pemesanan"

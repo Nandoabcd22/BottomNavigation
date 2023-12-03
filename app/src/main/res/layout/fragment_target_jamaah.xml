@@ -1,14 +1,381 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/merahtok"
     tools:context=".AGEN.TargetJamaahFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/putihImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/putihpendek"
+            android:outlineSpotShadowColor="@color/black"/>
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="194dp"
+            android:background="@drawable/logo1" />
+
+        <ImageView
+            android:id="@+id/btnKmbl"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:contentDescription="Back Button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="90dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/poppins_black"
+            android:text="Targer Pencapaian"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/putihImageView"
+            android:layout_margin="30dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="20dp"
+            app:cardBackgroundColor="@color/merah2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="40dp">
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Target Tahunan"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="120"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="530dp"
+            android:layout_below="@id/putihImageView"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginRight="30dp"
+            app:cardBackgroundColor="@color/merah2"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="40dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Target Yang Telah Dicapai"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Januari"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="5 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Februari"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="140dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Maret"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="140dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="180dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="April"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="180dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Mei"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="260dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Juni"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="260dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Juli"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="340dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Agustus"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="340dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="380dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="September"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="380dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="420dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Oktober"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="420dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="460dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="17dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="November"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="460dp"
+                android:layout_marginLeft="220dp"
+                android:layout_marginRight="10dp"
+                android:textSize="17dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="500dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="17dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Desember"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="500dp"
+                android:layout_marginLeft="220dp"
+                android:layout_marginRight="10dp"
+                android:textSize="17dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3 Jamaah"/>
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

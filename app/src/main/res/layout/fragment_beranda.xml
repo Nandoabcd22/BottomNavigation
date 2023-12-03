@@ -35,8 +35,6 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/logo1"
             />
-
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -51,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="110dp"
+            android:layout_marginRight="320dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Hai"
             android:textColor="@color/black"
@@ -67,45 +66,137 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-        <LinearLayout
-            android:id="@+id/containterFrame"
-            android:layout_width="wrap_content"
+        <HorizontalScrollView
+            android:id="@+id/scrollH_type"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:orientation="vertical">
+            android:paddingLeft="25dp"
+            android:scrollbars="none">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/FrameBtn"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/merah"
-                android:outlineSpotShadowColor="@color/white"
-                android:outlineAmbientShadowColor="@color/white"
-                android:textSize="30dp"
-                app:cardCornerRadius="8dp">
-
+        </HorizontalScrollView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="190dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="250dp"
+            app:cardCornerRadius="20dp"
+            android:background="@drawable/bg_card"
+            android:layout_marginBottom="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="0dp"
+                android:orientation="vertical">
                 <ImageView
-                    android:id="@+id/btnPanduan"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:src="@drawable/buku"
-                    android:layout_gravity="center"/>
-
-            </androidx.cardview.widget.CardView>
-
+                    android:layout_width="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/baseline_person_24"/>
+            </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Panduan"
-                android:textSize="12dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="110dp"
                 android:textAlignment="center"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/white"
-                />
-
-        </LinearLayout>
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="17dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Data Diri"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="190dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="250dp"
+            app:cardCornerRadius="20dp"
+            android:background="@drawable/bg_card"
+            android:layout_marginBottom="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/baseline_fact_check_24"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="110dp"
+                android:textAlignment="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Target"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="190dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="410dp"
+            app:cardCornerRadius="20dp"
+            android:background="@drawable/bg_card"
+            android:layout_marginBottom="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/baseline_groups_24"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="110dp"
+                android:textAlignment="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Daftar Jamaah"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="190dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="410dp"
+            app:cardCornerRadius="20dp"
+            android:background="@drawable/bg_card"
+            android:layout_marginBottom="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/baseline_monetization_on_24"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_marginTop="110dp"
+                android:textAlignment="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Komisi"/>
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
 </ScrollView>
